@@ -1,15 +1,20 @@
----
-title: Array.prototype.copyWithin
----
 ## Array.prototype.copyWithin
+The ``copyWithin()`` method overwrites part of the array with another part of it. This method **both modifies and returns** the array.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/array/array-prototype-copywithin/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+It can take **2 or 3 inputs**:
+* 2 inputs: ``copyWithin(overwriteFromHere, copyFromHereToEnd)``
+* 3 inputs: ``copyWithin(overwriteFromHere, copyFromHere, copyToHere)``
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+**Examples**
+```javascript
+var letters = ["a", "b", "c", "d", "e", "f", "g"]
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+// 2 inputs
+console.log(letters.copyWithin(1, 4)) // items(everything after 4) 4-5-6 to position 1-2-3(after 1)
+                                      // ["a", "e", "f", "g", "e", "f", "g"]
+                                      
+// 3 inputs
+letters = ["a", "b", "c", "d", "e", "f", "g"]
+console.log(letters.copyWithin(1, 4, 6)) // items(everything between 4 and 6) 4-5 to position 1-2(after 1)
+                                         // ["a", "e", "f", "d", "e", "f", "g"]
+```
